@@ -1,6 +1,6 @@
 appVersion: v1
-kind: pod
-metadate:
+kind: Pod
+metadata:
   name: multi-container
 spec:
   containers:
