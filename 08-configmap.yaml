@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-demo
+
+data:
+  ENVIRONMENT: "DEV"
+  LOG_LEVEL: "info"
+      
+        

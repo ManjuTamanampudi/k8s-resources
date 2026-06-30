@@ -1,0 +1,11 @@
+appVersion: v1
+kind: pod
+metadate:
+  name: multi-container
+spec:
+  containers:
+    - name:nginx
+      image:nginx
+
+    - name: almalinux
+      image: almalinux:9
