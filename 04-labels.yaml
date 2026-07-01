@@ -5,7 +5,8 @@ metadata:
   labels:
     app: roboshop
     environment: dev
-    purpose: poc
+    tier: backend
+    service: db
 spec:
   containers:
     - name: nginx
