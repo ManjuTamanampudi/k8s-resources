@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx 
 spec:
-  type: clusterIP
+  type: ClusterIP
   selector:   
      app: roboshop
      environment: dev
