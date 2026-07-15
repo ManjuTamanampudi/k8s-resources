@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-emptydir-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        # Mount the emptyDir volume at /usr/share/nginx/html
+        - name: nginx-logs
+          mountPath: /var/log/nginx
+    - name: almalinux:9
+      image: almalinux
+      command: ["sleep", "2000"]
+      volumeMounts:
+        - name: nginx-logs
+          mountPath: /mnt/nginx-logs
+  volumes:
+    - name: nginx-logs
+      emptyDir: 
+        sizeLimit: "500Gi"  # Optional: Limit the size of the emptyDir volume to 1Gi
+    
