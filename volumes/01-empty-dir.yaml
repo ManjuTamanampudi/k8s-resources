@@ -14,8 +14,8 @@ spec:
         # Mount the emptyDir volume at /usr/share/nginx/html
         - name: nginx-logs
           mountPath: /var/log/nginx
-    - name: almalinux:9
-      image: almalinux
+    - name: almalinux
+      image: almalinux:9
       command: ["sleep", "2000"]
       volumeMounts:
         - name: nginx-logs
