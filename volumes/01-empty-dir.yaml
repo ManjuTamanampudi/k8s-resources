@@ -26,22 +26,5 @@ spec:
       emptyDir: 
         sizeLimit: "500Gi"  # Optional: Limit the size of the emptyDir volume to 1Gi
 
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - name: ebs
-      mountPath: /usr/share/nginx/html
-  nodeSelector:
-    topology.kubernetes.io/zone: us-east-1b    
-  volumes:
-  - name: ebs
-    persistentVolumeClaim:
-      claimName: ebs-claim
+
     
